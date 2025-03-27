@@ -53,7 +53,9 @@ STEP 6: Use zscore of to remove outliers
             plt.show()
 
 slope: -1.1064189189189189
+
 Y-intercept: 14.08108108108108
+
 Predicted values: [ 5.22972973 11.86824324  1.91047297  7.44256757  8.54898649  9.65540541 0.80405405  4.12331081  7.44256757 12.97466216]
 
 # Result
