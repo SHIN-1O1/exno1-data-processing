@@ -21,6 +21,38 @@ STEP 5: Remove outliers using IQR
 STEP 6: Use zscore of to remove outliers
 
 # Coding and Output
-            <<include your coding and its corressponding output screen shots here>>
+            import numpy as np
+            import matplotlib.pyplot as plt
+
+            X = np.array(eval(input('X values:')))
+            Y = np.array(eval(input('Y values:')))
+
+            X_mean = np.mean(X)
+            Y_mean = np.mean(Y)
+            num = 0
+            denom = 0
+
+            for i in range(len(X)):
+                num += (X[i] - X_mean) * (Y[i] - Y_mean)
+                denom += (X[i] - X_mean) ** 2
+
+            m  = num/denom
+            b = Y_mean - m*X_mean
+
+            print('slope:',m)
+            print('Y-intercept:',b)
+
+            y_predicted = m*X+b
+            print('Predicted values:',y_predicted)
+
+            plt.scatter(X,Y)
+            plt.plot(X,y_predicted,color = 'red')
+            plt.title('Linear Regression')
+            plt.xlabel('X')
+            plt.ylabel('Y')
+            plt.show()
+
+
+
 # Result
-          <<include your Result here>>
+![download](https://github.com/user-attachments/assets/41914a90-6702-4f8f-ad54-676ca04e890c)
